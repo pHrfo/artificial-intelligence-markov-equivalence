@@ -25,7 +25,7 @@ class MarkovEquivalenceChecker:
 		"""
 		Finds the set of immoralities in the adj_list
 		"""
-		return [(v1, v3, v2) for v1 in adj_list for v2 in adj_list for v3 in adj_list[v1] if v3 in adj_list[v2] and v1 < v2]
+		return [(v1, v3, v2) for v1 in adj_list for v2 in adj_list for v3 in adj_list[v1] if v3 in adj_list[v2] and v1 < v2 and v2 not in adj_list[v1] and v1 not in adj_list[v2]]
 
 
 	def check_skeleton(self):
